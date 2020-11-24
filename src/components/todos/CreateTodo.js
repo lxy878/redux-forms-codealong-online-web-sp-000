@@ -15,11 +15,18 @@ class CreateTodo extends Component {
     e.preventDefault();
     this.props.addTodo(this.state)
   }
-  
+
   render() {
     return(
       <div>
-        Create Todo Component
+        <form onSubmit={ e => this.handleSubmit(e)}>
+         <p>
+           <label>add todo</label>
+           <input type='text' id='text' onChange={this.handleChange} value={this.state.text}/>
+         </p>
+         <input type='submit'/>
+        </form>
+        {this.state.text}
       </div>
     )
   }
